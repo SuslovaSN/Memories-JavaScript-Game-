@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <section class = "title"> MEMORIES
+  </section>
+
+  <section class = "descriptions"> Щелкай по карточкам, ищи пару - тренируй память! 
+  </section>
+
+  <section class="memory-game">
+    <div class="memory-card" data-framework="aniston"> <!--контейнер для карты-->
+      <img class="front-face" src="img/aniston.jpg"/> <!--лицо-->
+      <img class="back-face" src="img/back_side.jpg"/> <!--рубашка-->
+    </div>
+    <div class="memory-card" data-framework="aniston">
+      <img class="front-face" src="img/aniston.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+
+    <div class="memory-card" data-framework="atkinson">
+      <img class="front-face" src="img/atkinson.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+    <div class="memory-card" data-framework="atkinson">
+      <img class="front-face" src="img/atkinson.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+
+    <div class="memory-card" data-framework="etush">
+      <img class="front-face" src="img/etush.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+    <div class="memory-card" data-framework="etush">
+      <img class="front-face" src="img/etush.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+
+    <div class="memory-card" data-framework="freddy">
+      <img class="front-face" src="img/freddy.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+    <div class="memory-card" data-framework="freddy">
+      <img class="front-face" src="img//freddy.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+
+    <div class="memory-card" data-framework="stallone">
+      <img class="front-face" src="img//stallone.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+    <div class="memory-card" data-framework="stallone">
+      <img class="front-face" src="img/stallone.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+
+    <div class="memory-card" data-framework="lui">
+      <img class="front-face" src="img/lui.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+    <div class="memory-card" data-framework="lui">
+      <img class="front-face" src="img/lui.jpg"/>
+      <img class="back-face" src="img/back_side.jpg"/>
+    </div>
+
+  </section>
+
+<section id="state">
+  <div class="time-game">Время игры: </div>
+  <div id="time"></div>
+</section>
+
+<section id="post" class="hidden">
+    <div>
+      <p>Круто!</p>
+      <p id="final"></p>
+      <br>
+      <p>
+        <a id="again">Играть еще раз!</a>
+      </p>
+    </div>
+  </section>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

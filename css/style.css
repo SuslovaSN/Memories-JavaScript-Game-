@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*учитывает значения внутренних отступов и границ элемента при подсчёте общей высоты и ширины*/
+}
+
+.title {
+
+  text-align: center;
+  padding-top: 20px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ffcc00;
+  font-size: 80px;
+}
+
+.descriptions {
+  margin: 0px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+
+}
+
+body {
+  
+  height: 100vh;
+  display: flex;
+  background: #9c0060;
+  flex-direction: column;
+}
+
+.memory-game {
+  
+  width: 750px;
+  height: 600px;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; /*элементы будут располагаться на нескольких строках в соответствии с их размерами*/
+
+}
+
+.memory-card {
+  
+  width: 150px;
+  height: 200px;
+  margin: 10px; /*расстояние между карточками по горизонтали*/
+  position: relative; /*располагаем front-face и back-face относительно родителя memory-card */
+  transform-style: preserve-3d; /*помещаем в 3D-пространство, созданное в родителе*/
+  transition: transform .5s; /*эффект движения, задаем скорость переворорота карты при клике*/
+
+}
+
+#state {
+
+  border: 50px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time-game {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  color:#ffffff;
+}
+
+#time {
+  text-align: center;
+  margin-left: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  color:#ffffff;
+}
+
+#time::after { /*появляется при первом клике*/
+  content: " сек";
+}
+
+
+.memory-card:active { /*срабатывает при каждом нажатии*/
+  transform: scale(0.9); /*насколько уменьшается карточка при клике*/
+
+}
+
+.memory-card.flip { /*переворачивает карточку на 180 градусов*/
+  transform: rotateY(180deg); 
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+
+  position: absolute; /*убираем элементы с их исходных позиций и размещаем поверх друг друга*/
+  border-radius: 5px;
+
+}
+
+.front-face { 
+  transform: rotateY(180deg); /*чтобы переворовот второй стороны совпадает по осям с первой*/
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+
+/* Окно после завершения игры*/
+/*Сама надпись и фон*/
+#post {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+/*Белый фон центра + выравнивание*/
+#post > div {
+  width: 300px;
+  padding: 20px 0 40px;
+  background: white;
+  color: #9c0060;
+}
+
+#post p:first-child, 
+#post #final {
+  font-weight: bold;
+  letter-spacing: 2px;/*межбуквенный интервал*/
+  margin: auto;
+  padding: 10px 20px;
+}
+
+/*кнопка "играть еще раз"*/
+#post #again {
+  color: #9c0060;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px 20px;
+  width: 160px;
+  border: solid 1px;
+}
+
+/*кнопка "играть еще раз" при наведении*/
+#post #again:hover {
+  background: #9c0060;
+  color: white;
+  cursor: pointer; /*курсор меняется при наведении*/
+}
